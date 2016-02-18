@@ -5,7 +5,7 @@
 #   shelljs
 #
 # Configuration:
-#   none
+#   HUBOT_ANSIBLE_PLAYBOOKS_PATH
 #
 # Commands:
 #   hubot ansible me <command> - runs `ansible-playbook` with the following command
@@ -15,6 +15,8 @@
 
 shell = require 'shelljs'
 
+ansiblePath = process.env.HUBOT_ANSIBLE_PLAYBOOKS_PATH ? '.'
+
 module.exports = (robot) ->
 
   if ! shell.which 'ansible'
@@ -22,7 +24,10 @@ module.exports = (robot) ->
     exit 1
 
   runAnsiblePlaybook = (msg, command) ->
-    child = shell.exec ['ansible-playbook', command].join(' '), { async: true }
+    command = ['ansible-playbook', command].join(' ')
+    msg.send "Running `#{command}`"
+
+    child = shell.exec "cd #{ansiblePath} && #{command}", { async: true }
 
     child.stdout.on 'data', (data) ->
       msg.send data
@@ -30,5 +35,4 @@ module.exports = (robot) ->
   robot.respond /ansible\s+me\s+(.+)/i, (msg) ->
     command = msg.match[1]
 
-    msg.send "Running `ansible-playbook #{command}`"
-    runAnsiblePlaybook command
+    runAnsiblePlaybook msg, command
