@@ -7,10 +7,10 @@
   "keywords": "hubot,hubot-scripts,ansible",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-ansible.git"
+    "url": "git://github.com/willdurand/hubot-ansible.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-ansible/issues"
+    "url": "https://github.com/willdurand/hubot-ansible/issues"
   },
   "dependencies": {
     "shelljs": "^0.6.0"
