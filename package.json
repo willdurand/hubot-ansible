@@ -1,7 +1,7 @@
 {
   "name": "hubot-ansible-me",
   "description": "A hubot script that runs Ansible playbooks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "William Durand <will+git@drnd.me>",
   "license": "MIT",
   "keywords": "hubot,hubot-scripts,ansible",
