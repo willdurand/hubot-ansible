@@ -10,13 +10,13 @@ Installation
 
 In hubot project repo, run:
 
-    npm install hubot-ansible --save
+    npm install hubot-ansible-me --save
 
 Then add **hubot-ansible** to your `external-scripts.json`:
 
 ```json
 [
-  "hubot-ansible"
+  "hubot-ansible-me"
 ]
 ```
 
