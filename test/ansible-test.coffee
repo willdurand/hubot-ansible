@@ -1,19 +1,20 @@
-chai = require 'chai'
-sinon = require 'sinon'
-chai.use require 'sinon-chai'
+chai   = require 'chai'
+helper = require './test-helper'
+assert = chai.assert
 
-expect = chai.expect
+describe 'hubot ansible', ->
+  beforeEach (done) ->
+    @robot = helper.robot()
+    @user  = helper.testUser @robot
+    @robot.adapter.on 'connected', ->
+      @robot.loadFile  helper.SRC_PATH, 'ansible.coffee'
+      @robot.parseHelp "#{helper.SRC_PATH}/ansible.coffee"
+      done()
+    @robot.run()
 
-describe 'ansible', ->
-  beforeEach ->
-    @robot =
-      respond: sinon.spy()
-      hear: sinon.spy()
+  afterEach ->
+    @robot.shutdown()
 
-    require('../src/ansible')(@robot)
-
-  it 'registers a respond listener', ->
-    expect(@robot.respond).to.have.been.calledWith(/hello/)
-
-  it 'registers a hear listener', ->
-    expect(@robot.hear).to.have.been.calledWith(/orly/)
+  it 'should be included in /help', (done) ->
+    assert.include @robot.commands[0], 'ansible'
+    done()
