@@ -1,6 +1,9 @@
 hubot-ansible
 =============
 
+[![Build
+Status](https://travis-ci.org/willdurand/hubot-ansible.svg?branch=master)](https://travis-ci.org/willdurand/hubot-ansible)
+
 A hubot script that runs Ansible playbooks.
 
 See [`src/ansible.coffee`](src/ansible.coffee) for full documentation.
