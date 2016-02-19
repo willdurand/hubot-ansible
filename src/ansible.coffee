@@ -20,8 +20,7 @@ ansiblePath = process.env.HUBOT_ANSIBLE_PLAYBOOKS_PATH ? '.'
 module.exports = (robot) ->
 
   if ! shell.which 'ansible'
-    @robot.logger.error 'Cannot find ansible command'
-    exit 1
+    throw new Error('Cannot find ansible command')
 
   runAnsiblePlaybook = (msg, command) ->
     command = ['ansible-playbook', command].join(' ')
