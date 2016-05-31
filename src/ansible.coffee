@@ -26,7 +26,8 @@ module.exports = (robot) ->
     command = ['ansible-playbook', command].join(' ')
     msg.send "Running `#{command}`"
 
-    child = shell.exec "cd #{ansiblePath} && #{command}", { async: true }
+    child = shell.exec "cd #{ansiblePath} && #{command}", (code, stdout, stderr) ->
+      msg.send "Error: #{stderr}"
 
     child.stdout.on 'data', (data) ->
       msg.send data
