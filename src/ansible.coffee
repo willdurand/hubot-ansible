@@ -35,3 +35,5 @@ module.exports = (robot) ->
     command = msg.match[1]
 
     runAnsiblePlaybook msg, command
+
+  robot.on 'ansible:runPlaybook', runAnsiblePlaybook
