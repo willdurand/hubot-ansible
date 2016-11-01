@@ -49,6 +49,5 @@ module.exports = (robot) ->
     unless authorized
       msg.reply "I can't do that, you need at least one of these roles: #{authorized_roles}"
 
-    runAnsiblePlaybook msg, command
-
-
+    unless (not authorized)
+      runAnsiblePlaybook msg, command
