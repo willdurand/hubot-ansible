@@ -1,45 +1,13 @@
 {
-  "_args": [
-    [
-      "hubot-ansible-me@0.0.4",
-      "/home/colabs/hubot"
-    ]
-  ],
-  "_from": "hubot-ansible-me@0.0.4",
-  "_id": "hubot-ansible-me@0.0.4",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/hubot-ansible-me",
-  "_nodeVersion": "4.2.1",
-  "_npmOperationalInternal": {
-    "host": "packages-9-west.internal.npmjs.com",
-    "tmp": "tmp/hubot-ansible-me-0.0.4.tgz_1455873229999_0.5959044706542045"
-  },
-  "_npmUser": {
-    "email": "will+npm@drnd.me",
-    "name": "willdurand"
-  },
-  "_npmVersion": "2.14.7",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "hubot-ansible-me",
-    "raw": "hubot-ansible-me@0.0.4",
-    "rawSpec": "0.0.4",
-    "scope": null,
-    "spec": "0.0.4",
-    "type": "version"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/hubot-ansible-me/-/hubot-ansible-me-0.0.4.tgz",
-  "_shasum": "e9235c826d686625f49e3b82d630789c9ae72c81",
-  "_shrinkwrap": null,
-  "_spec": "hubot-ansible-me@0.0.4",
-  "_where": "/home/colabs/hubot",
-  "author": {
-    "email": "will+git@drnd.me",
-    "name": "William Durand"
+  "name": "hubot-ansible-me",
+  "description": "A hubot script that runs Ansible playbooks",
+  "version": "0.0.4",
+  "author": "William Durand <will+git@drnd.me>",
+  "license": "MIT",
+  "keywords": "hubot,hubot-scripts,ansible",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/willdurand/hubot-ansible.git"
   },
   "bugs": {
     "url": "https://github.com/willdurand/hubot-ansible/issues"
@@ -47,7 +15,9 @@
   "dependencies": {
     "shelljs": "^0.6.0"
   },
-  "description": "A hubot script that runs Ansible playbooks",
+  "peerDependencies": {
+    "hubot": "2.x"
+  },
   "devDependencies": {
     "chai": "^2.1.1",
     "coffee-script": "1.6.3",
@@ -63,36 +33,8 @@
     "sinon": "^1.13.0",
     "sinon-chai": "^2.7.0"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "e9235c826d686625f49e3b82d630789c9ae72c81",
-    "tarball": "https://registry.npmjs.org/hubot-ansible-me/-/hubot-ansible-me-0.0.4.tgz"
-  },
-  "gitHead": "8317cb8c4b3dc88315a31a62b5311a73024a607a",
-  "homepage": "https://github.com/willdurand/hubot-ansible#readme",
-  "keywords": [
-    "hubot,hubot-scripts,ansible"
-  ],
-  "license": "MIT",
   "main": "index.coffee",
-  "maintainers": [
-    {
-      "name": "willdurand",
-      "email": "will+npm@drnd.me"
-    }
-  ],
-  "name": "hubot-ansible-me",
-  "optionalDependencies": {},
-  "peerDependencies": {
-    "hubot": "2.x"
-  },
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/willdurand/hubot-ansible.git"
-  },
   "scripts": {
     "test": "grunt test"
-  },
-  "version": "0.0.4"
+  }
 }
